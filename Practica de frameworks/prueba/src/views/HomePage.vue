@@ -12,12 +12,17 @@
         :post="post" 
       />
     </section>
+
+   <AppFooter />
+
   </div>
+
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
 import BlogCard from '@/components/BlogCard.vue';
+import AppFooter from '@/components/AppFooter.vue';
 import moonLanding from '@/assets/moon-landing.png';
 import Illuminati from '@/assets/illuminati-en-musica-pop.png';
 import haarp from '@/assets/HAARP.png';
