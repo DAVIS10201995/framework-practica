@@ -18,6 +18,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import BlogCard from '@/components/BlogCard.vue';
+import moonLanding from '@/assets/moon-landing.png';
+
 
 interface Post {
   id: number;
@@ -31,7 +33,7 @@ const posts = ref<Post[]>([
     id: 1,
     title: "¿El hombre realmente llegó a la luna?",
     description: "Analizamos las pruebas fotográficas de la NASA.",
-    image: "moon-landing.png"
+    image: moonLanding
   },
   {
     id: 2,

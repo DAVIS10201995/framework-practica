@@ -1,6 +1,6 @@
 <template>
   <article class="blog-card">
-    <img v-if="post.image" :src="`/assets/${post.image}`" :alt="post.title" class="card-image">
+    <img v-if="post.image" :src="`${post.image}`" :alt="post.title" class="card-image">
     <div class="content">
       <h3>{{ post.title }}</h3>
       <p>{{ post.description }}</p>
