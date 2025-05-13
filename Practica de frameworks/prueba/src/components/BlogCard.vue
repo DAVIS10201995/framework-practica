@@ -4,17 +4,25 @@
     <div class="content">
       <h3>{{ post.title }}</h3>
       <p>{{ post.description }}</p>
-      <button class="read-more-btn" @click="$emit('read-more')">
+      <button class="read-more-btn" @click="isModalOpen = true">
         Leer más
         <span class="arrow">→</span>
       </button>
     </div>
+
+    <!-- Modal acoplado pero separado lógicamente -->
+     <div v-if="isModalOpen">
+            <ConspirationDetails :post="post" />
+     </div>
   </article>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
-defineProps<{
+import { ref ,defineProps} from 'vue';
+import AppModal from './AppModal.vue';
+import ConspirationDetails from './ConspirationDetails.vue';
+
+const props = defineProps<{
   post: {
     id: number;
     title: string;
@@ -22,6 +30,8 @@ defineProps<{
     image?: string;
   }
 }>();
+
+const isModalOpen = ref(false);
 </script>
 
 <style scoped>
