@@ -82,6 +82,9 @@ const posts = ref<Post[]>([
 .landing-page {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .hero {
