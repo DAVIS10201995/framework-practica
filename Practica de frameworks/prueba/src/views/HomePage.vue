@@ -37,16 +37,62 @@ const posts = ref<Post[]>([
     id: 2,
     title: "Los Illuminati en la música pop",
     description: "Símbolos ocultos en los videos de tus artistas favoritos.",
+  },
+  {
+    id: 3,
+    title: "El proyecto HAARP y el control del clima",
+    description: "¿Es posible manipular el clima a voluntad?",
+    image: "haarp.jpg"
+  },
+  {
+    id: 4,
+    title: "La verdad detrás de los chemtrails",
+    description: "¿Qué están rociando sobre nosotros?",
+    image: "chemtrails.jpg"
+  },
+  {
+    id: 5,
+    title: "La historia oculta de la medicina moderna",
+    description: "¿Quién se beneficia realmente de nuestras enfermedades?",
+  },
+  {
+    id: 6,
+    title: "El misterio de la Atlántida",
+    description: "¿Era una civilización avanzada o un mito?",
+    image: "atlantis.jpg"
+  },
+  {
+    id: 7,
+    title: "La conexión entre los extraterrestres y las antiguas civilizaciones",
+    description: "¿Eran nuestros ancestros visitados por seres de otros mundos?",
+    image: "aliens.jpg"
+  },
+  {
+    id: 8,
+    title: "El encubrimiento del Área 51",
+    description: "¿Qué secretos guarda realmente esta base militar?",
+    image: "area-51.jpg"
   }
 ]);
 </script>
 
 <style scoped>
+.landing-page {
+  margin: 0;
+  padding: 0;
+}
+
 .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 4rem 0;
   background: #1a1a2e;
   color: white;
+  width: 100%;
+  box-sizing: border-box;
 }
 .blog-grid {
   display: grid;
