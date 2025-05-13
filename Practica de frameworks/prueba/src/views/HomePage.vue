@@ -19,7 +19,9 @@
 import { ref } from 'vue';
 import BlogCard from '@/components/BlogCard.vue';
 import moonLanding from '@/assets/moon-landing.png';
-
+import Illuminati from '@/assets/illuminati-en-musica-pop.png';
+import haarp from '@/assets/HAARP.png';
+import chemtrails from '@/assets/chemtrails.png';
 
 interface Post {
   id: number;
@@ -39,18 +41,19 @@ const posts = ref<Post[]>([
     id: 2,
     title: "Los Illuminati en la música pop",
     description: "Símbolos ocultos en los videos de tus artistas favoritos.",
+    image: Illuminati
   },
   {
     id: 3,
     title: "El proyecto HAARP y el control del clima",
     description: "¿Es posible manipular el clima a voluntad?",
-    image: "haarp.jpg"
+    image: haarp
   },
   {
     id: 4,
     title: "La verdad detrás de los chemtrails",
     description: "¿Qué están rociando sobre nosotros?",
-    image: "chemtrails.jpg"
+    image: chemtrails
   },
   {
     id: 5,
