@@ -31,7 +31,7 @@ const posts = ref<Post[]>([
     id: 1,
     title: "¿El hombre realmente llegó a la luna?",
     description: "Analizamos las pruebas fotográficas de la NASA.",
-    image: "moon-landing.jpg"
+    image: "moon-landing.png"
   },
   {
     id: 2,

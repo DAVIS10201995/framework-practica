@@ -4,7 +4,7 @@
     <div class="content">
       <h3>{{ post.title }}</h3>
       <p>{{ post.description }}</p>
-      <button class="read-more-btn" @click="$emit('read-more')">
+      <button class="read-more-btn" @click="isModalOpen = true">
         Leer más
         <span class="arrow">→</span>
       </button>
@@ -14,6 +14,7 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
+
 defineProps<{
   post: {
     id: number;
