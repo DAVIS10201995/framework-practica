@@ -31,7 +31,7 @@ const posts = ref<Post[]>([
     id: 1,
     title: "¿El hombre realmente llegó a la luna?",
     description: "Analizamos las pruebas fotográficas de la NASA.",
-    image: "moon-landing.png"
+    image: "/assets/moon-landing.png"
   },
   {
     id: 2,
@@ -80,6 +80,9 @@ const posts = ref<Post[]>([
 .landing-page {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .hero {
