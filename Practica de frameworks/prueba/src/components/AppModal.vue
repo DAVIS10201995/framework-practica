@@ -25,6 +25,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
 interface Post { // Define la interfaz Post
   title: string;
