@@ -52,6 +52,12 @@ interface Post {
   title: string;
   description: string;
   image?: string;
+  fullContent?: {
+    introduction: string;
+    explanation?: string;
+    evidences: string[];
+    conclusion: string;
+  };
 }
 
 const posts = ref<Post[]>([
@@ -59,48 +65,121 @@ const posts = ref<Post[]>([
     id: 1,
     title: "¿El hombre realmente llegó a la luna?",
     description: "Analizamos las pruebas fotográficas de la NASA.",
-    image: moonLanding
+    image: moonLanding,
+    fullContent: {
+      introduction: "La llegada del hombre a la luna ha sido objeto de controversia desde 1969.",
+      explanation: "A lo largo de los años, han surgido numerosas teorías que cuestionan la veracidad de las misiones lunares. Algunos creen que las imágenes fueron manipuladas y que la NASA nunca envió astronautas a la luna. Otros argumentan que las condiciones en la luna son imposibles de replicar en un estudio de grabación.",
+      evidences: [
+        "Fotografías de la NASA que muestran inconsistencias.",
+        "Testimonios de supuestos ex-empleados de la NASA."
+      ],
+      conclusion: "A pesar de las teorías, la evidencia sigue siendo insuficiente para probar un engaño."
+    }
   },
   {
     id: 2,
     title: "Los Illuminati en la música pop",
     description: "Símbolos ocultos en los videos de tus artistas favoritos.",
-    image: Illuminati
+    image: Illuminati,
+    fullContent: {
+      introduction: "Los Illuminati son un grupo supuestamente secreto que ha sido objeto de numerosas teorías de conspiración.",
+      explanation: "Se dice que han infiltrado la industria de la música para promover su agenda. Muchos videos musicales contienen símbolos que los teóricos creen que son pruebas de esta infiltración.",
+      evidences: [
+        "Análisis de videos musicales que muestran símbolos ocultos.",
+        "Testimonios de artistas que afirman haber sido contactados por los Illuminati."
+      ],
+      conclusion: "Aunque hay muchas teorías, la evidencia concreta que vincula a los Illuminati con la música pop sigue siendo escasa."
+    }
   },
   {
     id: 3,
     title: "El proyecto HAARP y el control del clima",
     description: "¿Es posible manipular el clima a voluntad?",
-    image: haarp
+    image: haarp,
+    fullContent: {
+      introduction: "El proyecto HAARP ha sido objeto de numerosas teorías de conspiración relacionadas con el control del clima.",
+      explanation: "Se dice que HAARP tiene la capacidad de modificar el clima y provocar desastres naturales. Sin embargo, la mayoría de los científicos desmienten estas afirmaciones.",
+      evidences: [
+        "Documentos desclasificados que explican el propósito de HAARP.",
+        "Testimonios de ex-empleados que niegan las teorías de conspiración."
+      ],
+      conclusion: "A pesar de las afirmaciones, no hay evidencia concreta que respalde la idea de que HAARP pueda controlar el clima."
+    }
   },
   {
     id: 4,
     title: "La verdad detrás de los chemtrails",
     description: "¿Qué están rociando sobre nosotros?",
-    image: chemtrails
+    image: chemtrails,
+    fullContent: {
+      introduction: "Los chemtrails son una teoría de conspiración que sugiere que los rastros dejados por los aviones son en realidad productos químicos rociados intencionalmente.",
+      explanation: "Los defensores de esta teoría creen que los gobiernos están utilizando estos químicos para controlar el clima, manipular la población o llevar a cabo experimentos secretos.",
+      evidences: [
+        "Testimonios de pilotos que afirman haber sido instruidos para rociar químicos.",
+        "Análisis de muestras de aire que supuestamente muestran sustancias inusuales."
+      ],
+      conclusion: "Sin embargo, la comunidad científica sostiene que los chemtrails son simplemente contrails, o estelas de condensación, que se forman cuando el vapor de agua se congela en cristales de hielo."
+    }
   },
   {
     id: 5,
     title: "La historia oculta de la medicina moderna",
     description: "¿Quién se beneficia realmente de nuestras enfermedades?",
+    image: "medicine.jpg",
+    fullContent: {
+      introduction: "La medicina moderna ha avanzado a pasos agigantados, pero ¿quién se beneficia realmente de estos avances?",
+      explanation: "Algunos críticos argumentan que las grandes farmacéuticas priorizan las ganancias sobre la salud de los pacientes, promoviendo tratamientos en lugar de curas.",
+      evidences: [
+        "Estudios que muestran la efectividad de tratamientos alternativos que son ignorados por la medicina convencional.",
+        "Testimonios de médicos que han sido presionados para recetar medicamentos costosos."
+      ],
+      conclusion: "Es crucial cuestionar el sistema y buscar alternativas que realmente beneficien a los pacientes."
+    }
   },
   {
     id: 6,
     title: "El misterio de la Atlántida",
     description: "¿Era una civilización avanzada o un mito?",
-    image: "atlantis.jpg"
+    image: "atlantis.jpg",
+    fullContent: {
+      introduction: "La Atlántida es una legendaria isla mencionada por primera vez por Platón.",
+      explanation: "Se dice que era una civilización avanzada que desapareció bajo el mar. Muchos creen que su historia es solo un mito, mientras que otros buscan evidencia de su existencia.",
+      evidences: [
+        "Relatos de antiguos navegantes que mencionan una isla próspera en el océano.",
+        "Investigaciones arqueológicas en el Mediterráneo que sugieren la existencia de civilizaciones avanzadas."
+      ],
+      conclusion: "La verdad sobre la Atlántida sigue siendo un misterio, alimentando teorías y especulaciones."
+    }
   },
   {
     id: 7,
     title: "La conexión entre los extraterrestres y las antiguas civilizaciones",
     description: "¿Eran nuestros ancestros visitados por seres de otros mundos?",
-    image: "aliens.jpg"
+    image: "aliens.jpg",
+    fullContent: {
+      introduction: "A lo largo de la historia, ha habido numerosos relatos de encuentros con seres de otros mundos.",
+      explanation: "Algunos teóricos sugieren que estas visitas han influido en el desarrollo de las civilizaciones humanas.",
+      evidences: [
+        "Relatos de antiguos textos sumerios que mencionan dioses que bajaron del cielo.",
+        "Evidencias arqueológicas de estructuras que parecen haber sido construidas con tecnología avanzada."
+      ],
+      conclusion: "Aunque la idea de que los extraterrestres han visitado la Tierra es fascinante, la evidencia sigue siendo en gran medida anecdótica."
+    }
   },
   {
     id: 8,
     title: "El encubrimiento del Área 51",
     description: "¿Qué secretos guarda realmente esta base militar?",
-    image: "area-51.jpg"
+    image: "area-51.jpg",
+    fullContent: {
+      introduction: "El Área 51 es una instalación militar secreta en Nevada que ha sido objeto de teorías de conspiración durante décadas.",
+      explanation: "Se cree que el gobierno de los EE. UU. está llevando a cabo experimentos con tecnología extraterrestre en esta base.",
+      evidences: [
+        "Documentos desclasificados que mencionan el Área 51.",
+        "Testimonios de ex-empleados que afirman haber trabajado en proyectos secretos."
+      ],
+      conclusion: "A pesar de la especulación, la verdadera naturaleza de las actividades en el Área 51 sigue siendo un misterio."
+    }
   }
 ]);
 
