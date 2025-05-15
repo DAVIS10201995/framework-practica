@@ -5,6 +5,11 @@
       <p>Descubre las verdades que "ellos" no quieren que sepas</p>
     </header>
 
+    <section class="controls container">
+      <SearchBar v-model:search="search" />
+      <RandomButton :posts="posts" @random="showPostDetails" />
+    </section>
+
     <section class="blog-grid">
       <BlogCard 
         v-for="post in posts" 
@@ -12,6 +17,8 @@
         :post="post" 
       />
     </section>
+
+    <ContactForm />
 
    <AppFooter />
 
@@ -23,6 +30,11 @@
 import { ref } from 'vue';
 import BlogCard from '@/components/BlogCard.vue';
 import AppFooter from '@/components/AppFooter.vue';
+
+import SearchBar from '@/components/SearchBar.vue';
+import RandomButton from '@/components/RandomButton.vue';
+import ContactForm from '@/components/ContactForm.vue';
+
 import moonLanding from '@/assets/moon-landing.png';
 import Illuminati from '@/assets/illuminati-en-musica-pop.png';
 import haarp from '@/assets/HAARP.png';
@@ -84,7 +96,15 @@ const posts = ref<Post[]>([
     image: "area-51.jpg"
   }
 ]);
-</script>
+
+const search = ref('');
+const selectedPost = ref<Post | null>(null);
+
+
+function showPostDetails(post: Post) {
+  selectedPost.value = post;
+}
+</script>      
 
 <style scoped>
 .landing-page {
@@ -113,4 +133,19 @@ const posts = ref<Post[]>([
   gap: 2rem;
   padding: 2rem;
 }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 </style>
