@@ -1,37 +1,36 @@
 <template>
   <article class="blog-card">
-    <img v-if="post.image" :src="`${post.image}`" :alt="post.title" class="card-image">
+    <img v-if="post.image" :src="post.image" :alt="post.title" class="card-image">
     <div class="content">
       <h3>{{ post.title }}</h3>
       <p>{{ post.description }}</p>
-      <button class="read-more-btn" @click="isModalOpen = true">
+      <button class="read-more-btn" @click="emit('open-modal', post)">
         Leer más
         <span class="arrow">→</span>
       </button>
     </div>
-
-    <!-- Modal acoplado pero separado lógicamente -->
-     <div v-if="isModalOpen">
-            <ConspirationDetails :post="post" />
-     </div>
   </article>
 </template>
 
 <script setup lang="ts">
-import { ref ,defineProps} from 'vue';
-import AppModal from './AppModal.vue';
-import ConspirationDetails from './ConspirationDetails.vue';
+import { defineProps, defineEmits } from 'vue';
+import { computed } from 'vue';
+
+interface Post {
+  id: number;
+  title: string;
+  description: string;
+  image?: string;
+}
 
 const props = defineProps<{
-  post: {
-    id: number;
-    title: string;
-    description: string;
-    image?: string;
-  }
+  post: Post
 }>();
 
-const isModalOpen = ref(false);
+const emit = defineEmits(['open-modal']);
+
+// Usa props para eliminar el warning
+const postImage = computed(() => props.post.image);
 </script>
 
 <style scoped>

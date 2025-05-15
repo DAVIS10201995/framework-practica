@@ -6,8 +6,7 @@
     </header>
 
     <section class="controls container">
-      <SearchBar v-model:search="search" />
-      <RandomButton :posts="posts" @random="showPostDetails" />
+      <RandomButton :posts="posts" @random="handleRandomPost" />
     </section>
 
     <section class="blog-grid">
@@ -15,8 +14,16 @@
         v-for="post in posts" 
         :key="post.id" 
         :post="post" 
+        @open-modal="openModalWithPost"
       />
     </section>
+
+    <AppModal 
+    v-if="selectedPost"
+    :show="modalOpen" 
+    :post="selectedPost"
+    @close="modalOpen = false"
+  />
 
     <ContactForm />
 
@@ -30,8 +37,8 @@
 import { ref } from 'vue';
 import BlogCard from '@/components/BlogCard.vue';
 import AppFooter from '@/components/AppFooter.vue';
+import AppModal from '@/components/AppModal.vue';
 
-import SearchBar from '@/components/SearchBar.vue';
 import RandomButton from '@/components/RandomButton.vue';
 import ContactForm from '@/components/ContactForm.vue';
 
@@ -97,12 +104,18 @@ const posts = ref<Post[]>([
   }
 ]);
 
-const search = ref('');
+
+const modalOpen = ref(false);
 const selectedPost = ref<Post | null>(null);
 
-
-function showPostDetails(post: Post) {
+function handleRandomPost(post: Post) {
   selectedPost.value = post;
+  modalOpen.value = true;
+}
+
+function openModalWithPost(post: Post) {
+  selectedPost.value = post;
+  modalOpen.value = true;
 }
 </script>      
 
