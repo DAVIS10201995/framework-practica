@@ -46,6 +46,10 @@ import moonLanding from '@/assets/moon-landing.png';
 import Illuminati from '@/assets/illuminati-en-musica-pop.png';
 import haarp from '@/assets/HAARP.png';
 import chemtrails from '@/assets/chemtrails.png';
+import medicina from '@/assets/la historia oculta de la medicina.png';
+import antartida from '@/assets/el misterio de la antartida.png';
+import encubrimiento from '@/assets/el encubriiento del area 51.png';
+import conexion from '@/assets/conexionn entre los extraterrestres.png';
 
 interface Post {
   id: number;
@@ -125,7 +129,7 @@ const posts = ref<Post[]>([
     id: 5,
     title: "La historia oculta de la medicina moderna",
     description: "¿Quién se beneficia realmente de nuestras enfermedades?",
-    image: "medicine.jpg",
+    image: medicina,
     fullContent: {
       introduction: "La medicina moderna ha avanzado a pasos agigantados, pero ¿quién se beneficia realmente de estos avances?",
       explanation: "Algunos críticos argumentan que las grandes farmacéuticas priorizan las ganancias sobre la salud de los pacientes, promoviendo tratamientos en lugar de curas.",
@@ -140,7 +144,7 @@ const posts = ref<Post[]>([
     id: 6,
     title: "El misterio de la Atlántida",
     description: "¿Era una civilización avanzada o un mito?",
-    image: "atlantis.jpg",
+    image: antartida,
     fullContent: {
       introduction: "La Atlántida es una legendaria isla mencionada por primera vez por Platón.",
       explanation: "Se dice que era una civilización avanzada que desapareció bajo el mar. Muchos creen que su historia es solo un mito, mientras que otros buscan evidencia de su existencia.",
@@ -155,7 +159,7 @@ const posts = ref<Post[]>([
     id: 7,
     title: "La conexión entre los extraterrestres y las antiguas civilizaciones",
     description: "¿Eran nuestros ancestros visitados por seres de otros mundos?",
-    image: "aliens.jpg",
+    image: conexion,
     fullContent: {
       introduction: "A lo largo de la historia, ha habido numerosos relatos de encuentros con seres de otros mundos.",
       explanation: "Algunos teóricos sugieren que estas visitas han influido en el desarrollo de las civilizaciones humanas.",
@@ -170,7 +174,7 @@ const posts = ref<Post[]>([
     id: 8,
     title: "El encubrimiento del Área 51",
     description: "¿Qué secretos guarda realmente esta base militar?",
-    image: "area-51.jpg",
+    image: encubrimiento,
     fullContent: {
       introduction: "El Área 51 es una instalación militar secreta en Nevada que ha sido objeto de teorías de conspiración durante décadas.",
       explanation: "Se cree que el gobierno de los EE. UU. está llevando a cabo experimentos con tecnología extraterrestre en esta base.",
